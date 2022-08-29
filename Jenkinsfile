@@ -1,22 +1,4 @@
 
-
-pipeline {
-    agent any
-    stages {
-        stage('Example') {
-            steps {
-                echo 'Hello World'
-            }
-        }
-    }
-    post { 
-        always { 
-            echo 'I will always say Hello again!'
-        }
-    }
-}
-
-
 pipeline {
     agent any 
     stages {
@@ -37,10 +19,9 @@ pipeline {
         }
         stage('Deploy') { 
             steps {
-                deploy adapters: [tomcat9(credentialsId: '36f4bf41-38bf-4883-87f8-81adfe9f25ce', path: '', url: 'http://localhost:8080/')], contextPath: 'java', onFailure: false, war: '**/*.war' 
+                deploy adapters: [tomcat9(credentialsId: 'aa0130e3-5fa5-49f8-959b-f958a225ea23', path: '', url: 'http://localhost:8085')], contextPath: 'test', war: '*/*.war'
             }
         }
     }
 }
-
 
