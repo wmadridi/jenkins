@@ -12,7 +12,7 @@ public class HelloWorld implements SparkApplication {
 		get("/hello", (req, res) -> "Hello World");
 		 get("/Test", (req, res) -> "Hala MADRID");
 		
-		get("/", (req, res) -> "it is Monday");
+		get("/", (req, res) -> "it is Monday ...working Time");
 
 	}
 }
